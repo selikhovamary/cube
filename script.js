@@ -1,18 +1,38 @@
 $(document).ready(function(){
-    $('button').click(function(){
-        $('button').removeClass('active');
-        $(this).addClass('active');
-    });
-    $('.ft').click(function(){ $('#shape').removeClass().addClass('show-ft'); });
-    $('.rt').click(function(){ $('#shape').removeClass().addClass('show-rt'); });
-    $('.bk').click(function(){ $('#shape').removeClass().addClass('show-bk'); });
-    $('.lt').click(function(){ $('#shape').removeClass().addClass('show-lt'); });
-    $('.tp').click(function(){ $('#shape').removeClass().addClass('show-tp'); });
-    $('.bm').click(function(){ $('#shape').removeClass().addClass('show-bm'); });
-    
-    $('.zi').click(function(){ $('#shape').removeClass('zi').addClass('zi'); });
-    $('.zo').click(function(){ $('#shape').removeClass('zi'); });
-    
-    $('.spinstart').click(function(){ $('#shape').addClass('spin'); });
-    $('.spinstop').click(function(){ $('#shape').removeClass('spin'); });
+
+    let lastSpin = 0;
+    function spinCube() {
+        let spin = Math.floor(Math.random() * 6 + 1);
+        while (lastSpin == spin) {
+            spin = Math.floor(Math.random() * 6 + 1);
+        }
+        lastSpin = spin;
+        switch (spin) {
+            case 1: 
+                $('#shape').removeClass().addClass('show-ft');
+                break; 
+            case 2: 
+                $('#shape').removeClass().addClass('show-rt'); 
+                break;
+            case 3: 
+                $('#shape').removeClass().addClass('show-bk');
+                break;
+            case 4: 
+                $('#shape').removeClass().addClass('show-lt'); 
+                break;
+            case 5: 
+                $('#shape').removeClass().addClass('show-tp'); 
+                break;
+            case 6: 
+                $('#shape').removeClass().addClass('show-bm'); 
+                break;
+        }
+    }
+    $('#shape > div').click(function(){
+        for (let i = 0; i < 10; i++) {
+            const seconds = 500 * i;
+            setTimeout(spinCube, seconds)
+        }
+    })
+
 });
