@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    setTimeout("$('.first').removeClass('displayNone')", 500);
+    setTimeout("$('.second').removeClass('displayNone')", 1000);
+    setTimeout("$('.third').removeClass('displayNone')", 1500);
 
     let lastSpin = 0;
     function spinCube() {
