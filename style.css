@@ -49,3 +49,9 @@ body { margin:0; padding:0; background-color:#4dcbfd5e; }
 		/*animations*/
 		#shape.spin { -webkit-animation: spin 5s infinite linear; -moz-animation: spin 5s infinite linear; animation: spin 5s infinite linear; }
 		#shape 		{ -webkit-transition: all 0.5s; -moz-transition: all 0.5s; transition: all 0.5s; -webkit-transform: scale(1); -webkit-transform: rotateX(-5deg) rotateY(-30deg); -moz-transform: scale(1); -moz-transform: rotateX(-5deg) rotateY(-30deg); transform: scale(1); transform: rotateX(-5deg) rotateY(-30deg); }
+		.side{
+			display: flex;flex-direction: column;justify-content: space-around; padding: 10px; box-sizing: border-box;
+		}
+		.dots {
+			display: flex; font-size: 65px; height: 33%;align-items: center;justify-content: space-around;
+		}
