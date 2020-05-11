@@ -1,9 +1,6 @@
 $(document).ready(function(){
-    setTimeout("$('.first').removeClass('displayNone')", 500);
-    setTimeout("$('.second').removeClass('displayNone')", 1000);
-    setTimeout("$('.third').removeClass('displayNone')", 1500);
-
     let lastSpin = 0;
+
     function spinCube() {
         let spin = Math.floor(Math.random() * 6 + 1);
         while (lastSpin == spin) {
@@ -31,7 +28,17 @@ $(document).ready(function(){
                 break;
         }
     }
+    let isClickable = true;
+
+    function setAbleToClick() {
+        isClickable = true;
+    }
+
     $('#shape > div').click(function(){
+        if (!isClickable) return;
+        isClickable = false;
+        setTimeout(setAbleToClick, 6000);
+
         for (let i = 0; i < 10; i++) {
             const seconds = 500 * i;
             setTimeout(spinCube, seconds)
