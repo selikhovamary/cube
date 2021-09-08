@@ -1,6 +1,6 @@
 $(document).ready(function(){
     let latestSpin = 0;
-    console.log('d')
+console.log('1')
     function spinCube() {
         let spin = Math.floor(Math.random() * 6 + 1);
         while (latestSpin == spin) {
@@ -9,22 +9,22 @@ $(document).ready(function(){
         latestSpin = spin;
         switch (spin) {
             case 1: 
-                $('#shape').removeClass().addClass('show-ft');
+                $('#cube').removeClass().addClass('show-ft');
                 break; 
             case 2: 
-                $('#shape').removeClass().addClass('show-rt'); 
+                $('#cube').removeClass().addClass('show-rt'); 
                 break;
             case 3: 
-                $('#shape').removeClass().addClass('show-bk');
+                $('#cube').removeClass().addClass('show-bk');
                 break;
             case 4: 
-                $('#shape').removeClass().addClass('show-lt'); 
+                $('#cube').removeClass().addClass('show-lt'); 
                 break;
             case 5: 
-                $('#shape').removeClass().addClass('show-tp'); 
+                $('#cube').removeClass().addClass('show-tp'); 
                 break;
             case 6: 
-                $('#shape').removeClass().addClass('show-bm'); 
+                $('#cube').removeClass().addClass('show-bm'); 
                 break;
         }
     }
@@ -34,7 +34,7 @@ $(document).ready(function(){
         isClickable = true;
     }
 
-    $('#shape > div').click(function(){
+    $('#cube > div').click(function(){
         if (!isClickable) return;
         isClickable = false;
         setTimeout(setAbleToClick, 6000);
