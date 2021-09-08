@@ -1,12 +1,12 @@
 $(document).ready(function(){
-    let lastSpin = 0;
+    let latestSpin = 0;
 
     function spinCube() {
         let spin = Math.floor(Math.random() * 6 + 1);
-        while (lastSpin == spin) {
+        while (latestSpin == spin) {
             spin = Math.floor(Math.random() * 6 + 1);
         }
-        lastSpin = spin;
+        latestSpin = spin;
         switch (spin) {
             case 1: 
                 $('#shape').removeClass().addClass('show-ft');
