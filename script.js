@@ -1,6 +1,6 @@
 $(document).ready(function(){
     let latestSpin = 0;
-
+console.log('1')
     function spinCube() {
         let spin = Math.floor(Math.random() * 6 + 1);
         while (latestSpin == spin) {
